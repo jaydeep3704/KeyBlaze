@@ -10,12 +10,12 @@ function generateParagraphUsingPredefinedText(){
         paragraph.push(words[Math.floor(Math.random()*words.length)])
     }
 
-    return paragraph.join().toLowerCase()
+    return paragraph.join(' ').toLowerCase()
 }
 
 
 //generate paragraph using ai
-async function generateParagraph(){
+export async function generateParagraph(){
     try {
     const ai=new GoogleGenAI({
         apiKey:process.env.GEMINI_API_KEY,

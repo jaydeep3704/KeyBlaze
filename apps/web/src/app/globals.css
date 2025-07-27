@@ -172,3 +172,24 @@ body {
   }
 }
 
+@layer utilities {
+  .word-spacing-wide {
+    word-spacing: 0.5rem;
+  }
+
+  .word-spacing-wider {
+    word-spacing: 1rem;
+  }
+
+  .word-spacing-widest {
+    word-spacing: 2rem;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

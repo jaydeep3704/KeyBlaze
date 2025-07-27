@@ -28,7 +28,7 @@ export default function Multiplayer() {
 
 
     return (
-        <div className="max-w-5xl mx-auto py-20 space-y-4 lg:px-0 px-4">
+        <main className="max-w-5xl mx-auto py-20 space-y-4 lg:px-0 px-4">
             <h1 className="font-bold text-4xl flex items-center gap-2"><Users className="size-8"/>Multiplayer Battles</h1>
             <div className=" text-muted-foreground ">
                 Welcome to KeyBlaze — the ultimate battleground where speed meets skill.
@@ -66,6 +66,6 @@ export default function Multiplayer() {
                 </Card>
 
             </div>
-        </div>
+        </main>
     )
 }

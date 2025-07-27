@@ -3,7 +3,7 @@ import chalk from "chalk";
 import { Game } from "../classes/game";
 
 //create a map which keeps tracks of game
-const rooms=new Map<string,Game>();
+export const rooms=new Map<string,Game>();
 
 export function setupListeners(io:Server){
 
@@ -11,7 +11,7 @@ export function setupListeners(io:Server){
         
         console.log(chalk.bgGreen(`Socket connected - ${socket.id}`))
         //join room
-        socket.on('join-room',(roomId:string,name:string)=>{
+        socket.on('join-game',(roomId:string,name:string)=>{
             
             if(!roomId) 
                 return socket.emit("error","Invalid Room Id")
@@ -31,8 +31,13 @@ export function setupListeners(io:Server){
                 game.joinPlayer(socket.id,name,socket)
             }
         })
-    })
 
+        socket.on("disconnect",()=>{
+        console.log(chalk.bgRed(`Socket disconnected - ${socket.id}`))
+    })
+    })
+   
+    
     
 
 }
